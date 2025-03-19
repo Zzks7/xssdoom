@@ -48,7 +48,7 @@ function ShowTextOnDOM(){
 
 function CreateGameIframe() {
     var iframe = document.createElement('iframe');
-    iframe.src = 'https://dos.zone/multiplayer/doom-ii/'
+    iframe.src = 'https://doomonline1.vercel.app/dos.html'
     iframe.id = "Doom"
 
     iframe.height = GameResolutionHeight;

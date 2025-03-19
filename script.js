@@ -7,7 +7,7 @@ const GameResolutionHeight = 600;
 const GameFullScreen = false;
 
 const ShowText = true;
-const TextToShow = 'Defaced by - 1337 Digital Corsair'
+const TextToShow = 'Defaced by - Zzks'
 
 const InjectHtml = false;
 const InnerHtml = '<h1>Hi there</h1>'

